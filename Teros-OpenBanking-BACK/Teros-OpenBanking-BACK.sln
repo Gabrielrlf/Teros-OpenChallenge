@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{C2CE41DE-B5E3-4786-864A-B5D71479853D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerosOpenBanking.Application", "TerosOpenBanking.Application\TerosOpenBanking.Application.csproj", "{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{D6487C2D-BA01-4109-8D2E-579F7762CE31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0FAAB11E-2A0E-4409-B70B-B9890EE6FAF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerosOpenBanking.Infra", "TerosOpenBanking.Infra\TerosOpenBanking.Infra.csproj", "{00862CDD-6F04-43B4-8448-A311B38B5731}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerosOpenBanking.Domain", "TerosOpenBanking.Domain\TerosOpenBanking.Domain.csproj", "{AB561F89-D676-403A-AAC7-A8CFF1EF81F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00862CDD-6F04-43B4-8448-A311B38B5731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00862CDD-6F04-43B4-8448-A311B38B5731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00862CDD-6F04-43B4-8448-A311B38B5731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00862CDD-6F04-43B4-8448-A311B38B5731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB561F89-D676-403A-AAC7-A8CFF1EF81F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB561F89-D676-403A-AAC7-A8CFF1EF81F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB561F89-D676-403A-AAC7-A8CFF1EF81F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB561F89-D676-403A-AAC7-A8CFF1EF81F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2E343E5A-FC53-4D80-9EC0-9EF0BF1637A2} = {C2CE41DE-B5E3-4786-864A-B5D71479853D}
+		{00862CDD-6F04-43B4-8448-A311B38B5731} = {D6487C2D-BA01-4109-8D2E-579F7762CE31}
+		{AB561F89-D676-403A-AAC7-A8CFF1EF81F8} = {0FAAB11E-2A0E-4409-B70B-B9890EE6FAF3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {744282FD-9116-407A-B130-7A2FC0B86175}
+	EndGlobalSection
+EndGlobal
