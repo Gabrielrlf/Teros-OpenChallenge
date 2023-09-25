@@ -8,6 +8,7 @@ namespace TerosOpenBanking.Domain.Entity
 {
     public class RequestDataModel : EntityBase
     {
+        public string OrganisationId { get; set; }
         public string Name { get; set; }
         public string Discovery { get; set; }
         public string Image { get; set; }

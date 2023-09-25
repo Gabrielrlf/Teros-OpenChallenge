@@ -7,25 +7,32 @@ using System.Threading.Tasks;
 using TerosOpenBanking.Application.Mediator.Commands;
 using TerosOpenBanking.Domain.Entity;
 using TerosOpenBanking.Infra.Context;
+using TerosOpenBanking.Infra.Interface;
 
 namespace TerosOpenBanking.Application.Mediator.Handler
 {
-    public class BaseObjectCommandHandler : IRequestHandler<BaseObjectCommand, int>
+    public class BaseObjectCommandHandler : IRequestHandler<BaseObjectCommand, RequestDataModel>
     {
-        private readonly RequestDataContext _dbContext;
-        public BaseObjectCommandHandler(RequestDataContext dbContext)
+        private readonly IRequestRepository _repository;
+        public BaseObjectCommandHandler(IRequestRepository repository)
         {
-            _dbContext = dbContext;
+            _repository = repository;
         }
 
-        public async Task<int> Handle(BaseObjectCommand request, CancellationToken cancellationToken)
+        public async Task<RequestDataModel> Handle(BaseObjectCommand request, CancellationToken cancellationToken)
         {
+            var allValues = await _repository.GetData();
+            var isExist = allValues.Where(x => x.OrganisationId == request.OrganizationId).Any();
+
+
+            if (isExist)
+                return new RequestDataModel();
+  //          if ( await _repository.GetData().Result.ToArray().Where(x => x.OrganisationId == request.OrganizationId) == null)
+  //            return new RequestDataModel();
+
             var requestDataModel = request.GetToMapping();
 
-            _dbContext.DataModel.Add(requestDataModel);
-            await _dbContext.SaveChangesAsync();
-
-            return requestDataModel.Id;
+           return await _repository.SaveData(requestDataModel);
         }
             
     }

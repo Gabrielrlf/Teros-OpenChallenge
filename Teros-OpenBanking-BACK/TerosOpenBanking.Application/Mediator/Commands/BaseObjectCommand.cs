@@ -8,12 +8,25 @@ using TerosOpenBanking.Domain.Exception;
 
 namespace TerosOpenBanking.Application.Mediator.Commands
 {
-    public class BaseObjectCommand : IRequest<int>
+    public class BaseObjectCommand : IRequest<RequestDataModel>
     {
         private string _name = string.Empty;
         private string _image = string.Empty;
         private string _discovery = string.Empty;
+        private string _organizationId = string.Empty;
 
+
+        public string OrganizationId
+        {
+            get => _organizationId;
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                    _organizationId = value;
+                else
+                    throw new BaseException("Name not found - Please, check. ");
+            }
+        }
         public string Name
         {
             get => _name;
@@ -30,7 +43,7 @@ namespace TerosOpenBanking.Application.Mediator.Commands
             get => _image;
             set
             {
-                if (!string.IsNullOrEmpty(_image))
+                if (!string.IsNullOrEmpty(value))
                     _image = value;
                 else
                     throw new BaseException("Image not found - Please, check. ");
@@ -52,6 +65,7 @@ namespace TerosOpenBanking.Application.Mediator.Commands
         {
             return new RequestDataModel()
             {
+                OrganisationId = this.OrganizationId,
                 Discovery = this.Discovery,
                 Image = this.Image,
                 Name = this.Name
