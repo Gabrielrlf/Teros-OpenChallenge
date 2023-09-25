@@ -6,7 +6,7 @@ import GetDataService from '../Service/GetDataService.js';
 function GridPag() {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 6;
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const handleChangePage = (event: any, newPage: any) => {
@@ -42,8 +42,8 @@ function GridPag() {
           <Table>
             <TableHead className="columns">
               <TableRow>
-                <TableCell>Nome</TableCell>
-                <TableCell>Logo</TableCell>
+                <TableCell style={{width: '150px'}} >Nome</TableCell>
+                <TableCell style={{height: '30px'}}>Logo</TableCell>
                 <TableCell>Discovery</TableCell>
 
               </TableRow>
@@ -51,8 +51,8 @@ function GridPag() {
             <TableBody>
               {data?.slice(startIndex, endIndex).map((item: any) => (
                 <TableRow key={item.id}>
-                  <TableCell>{item.name}</TableCell>
-                  <TableCell style={{maxWidth: "40%"}} ><img height={"50%"} width={"30%"} src={item.image} alt="img not found" /></TableCell>
+                  <TableCell  style={{height: '30px'}}>{item.name.toLowerCase()}</TableCell>
+                  <TableCell style={{maxWidth: "30%"}} ><img height={"50%"} width={"30%"} src={item.image} alt="img not found" /></TableCell>
                   <TableCell>{item.discovery}</TableCell>
                 </TableRow>
               ))}

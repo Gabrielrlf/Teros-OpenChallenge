@@ -27,8 +27,6 @@ namespace TerosOpenBanking.Application.Mediator.Handler
 
             if (isExist)
                 return new RequestDataModel();
-  //          if ( await _repository.GetData().Result.ToArray().Where(x => x.OrganisationId == request.OrganizationId) == null)
-  //            return new RequestDataModel();
 
             var requestDataModel = request.GetToMapping();
 
